@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy · ZenColor</title>
+<style>
+:root {
+  --bg: #F8F8FA; --text: #1C1C1E; --sub: #8E8E93; --accent: #636378;
+  --card: #FFF; --border: #E5E5EA; --r: 14px;
+  --font: -apple-system,"SF Pro Display","Helvetica Neue","PingFang SC",sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0C0C0E; --text: #E5E5E7; --sub: #8E8E93; --card: #1C1C1E; --border: #2C2C2E; --accent: #A0A0B0; }
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-weight:300;line-height:1.8;-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding:48px 20px 80px}
+.lang-bar{display:flex;gap:6px;margin-bottom:36px;flex-wrap:wrap;justify-content:flex-end}
+.lang-bar a{color:var(--sub);font-size:11px;text-decoration:none;padding:4px 8px;border-radius:5px;border:1px solid var(--border);transition:.2s;cursor:pointer}
+.lang-bar a.on,.lang-bar a:hover{background:var(--text);color:var(--bg);border-color:var(--text)}
+h1{font-size:28px;font-weight:200;letter-spacing:-.3px;margin-bottom:2px}
+.d{font-size:13px;color:var(--sub);margin-bottom:36px}
+section{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:26px 22px;margin-bottom:14px}
+section h2{font-size:17px;font-weight:500;margin-bottom:12px;color:var(--accent)}
+section p,section li{font-size:14px;font-weight:300}
+section ul{padding-left:20px}
+section li{margin-bottom:5px}
+.ft{text-align:center;color:var(--sub);font-size:12px;margin-top:40px}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+var D={
+'zh-Hans':{n:'简体中文',t:'隐私政策',d:'更新于 2026年7月',s:[
+{h:'概述',p:'ZenColor（以下简称"我们"）是一款完全离线运行的涂色应用。我们高度重视您的隐私安全，本政策详细说明我们如何收集、使用和保护您的信息。'},
+{h:'信息收集',p:'我们不收集任何个人身份信息。应用仅在本地存储以下数据：',ul:['您设置的昵称和简介（存储在设备本地，不上传）','涂色偏好与颜色历史（用于改善使用体验）','应用语言偏好']},
+{h:'系统权限',p:'我们为您提供"拍照转线稿"功能，需要以下权限（均需您明确授权）：',ul:['相机权限：用于拍摄照片，即时转换为可涂色的线稿。我们不会存储或上传您的照片','相册读取权限：用于从相册选择照片转换为线稿','相册写入权限：用于将您完成的作品保存到相册']},
+{h:'数据存储',p:'所有数据仅存储在您的设备本地沙盒中，包括涂色作品、用户偏好设置等。我们没有任何服务器，不会收集、上传或远程存储您的任何数据。'},
+{h:'AI 处理',p:'本应用使用 CoreML 模型进行本地图片超分处理，所有 AI 计算均在您的设备上完成，不会将任何图片或数据发送到外部服务器。'},
+{h:'分析统计',p:'我们未集成任何第三方分析工具（如 Firebase、Adjust 等）。我们不会追踪您的使用行为，不收集 IDFA 或其他设备标识符。'},
+{h:'邮件反馈',p:'当您通过应用内"反馈"功能联系我们时，邮件将由系统邮件客户端发送，包含您的设备型号和系统版本信息（仅用于问题排查）。此信息由您主动发送，我们不会自动获取。'},
+{h:'儿童隐私',p:'本应用面向所有年龄用户。我们不会主动收集任何人的个人信息，包括13岁以下儿童。'},
+{h:'第三方服务',p:'我们未集成任何第三方 SDK。应用内购买通过 Apple StoreKit 处理，交易全程由 Apple 负责，我们无法获取您的付款信息。'},
+{h:'数据删除',p:'由于所有数据仅存储在您的设备本地，您可以在设备设置中清除应用数据，或直接卸载应用以完全删除所有信息。'},
+{h:'政策更新',p:'我们可能适时更新本政策。更新内容将在本页面发布，建议您定期查阅。'},
+{h:'联系我们',p:'如有任何隐私相关问题，请通过以下方式联系我们：',ul:['邮箱：xuanzzhang@163.com']}
+]},
+'en':{n:'English',t:'Privacy Policy',d:'Updated July 2026',s:[
+{h:'Overview',p:'ZenColor is a fully offline coloring app. We take your privacy seriously. This policy explains how we collect, use, and protect your information.'},
+{h:'Information Collection',p:'We do not collect any personally identifiable information. The app only stores locally:',ul:['Your nickname and bio (stored locally, never uploaded)','Coloring preferences and color history','Language preference']},
+{h:'System Permissions',p:'The "Photo to Sketch" feature may request:',ul:['Camera: to capture photos for real-time line art conversion. Photos are not stored or uploaded','Photo Library (read): to select existing photos for conversion','Photo Library (write): to save your completed artwork to the album']},
+{h:'Data Storage',p:'All data is stored exclusively in your device\'s local sandbox — artwork, preferences, and all other data. We operate no servers and do not collect or upload any of your data.'},
+{h:'AI Processing',p:'This app uses CoreML models for on-device image processing. All AI computation runs locally on your device. No images or data are transmitted to external servers.'},
+{h:'Analytics',p:'We do not integrate any third-party analytics tools (Firebase, Adjust, etc.). We do not track your behavior or collect IDFA or any device identifiers.'},
+{h:'Feedback',p:'When you use the in-app feedback feature, an email is sent via the system mail client, optionally including your device model and OS version (for troubleshooting). This is sent by you voluntarily.'},
+{h:'Children\'s Privacy',p:'This app is suitable for all ages. We do not knowingly collect personal information from anyone, including children under 13.'},
+{h:'Third-Party Services',p:'We do not integrate any third-party SDKs. In-app purchases are handled by Apple StoreKit; Apple processes all transactions. We cannot access your payment details.'},
+{h:'Data Deletion',p:'Since all data is stored locally, you can clear app data in device settings or uninstall the app to permanently delete all information.'},
+{h:'Policy Updates',p:'We may update this policy periodically. Changes will be posted here.'},
+{h:'Contact',p:'For privacy-related questions:',ul:['Email: xuanzzhang@163.com']}
+]},
+'ja':{n:'日本語',t:'プライバシーポリシー',d:'2026年7月更新',s:[
+{h:'概要',p:'ZenColor は完全オフラインの塗り絵アプリです。お客様のプライバシーを尊重し、情報の収集・利用・保護について説明します。'},
+{h:'情報収集',p:'個人を特定できる情報は一切収集しません。アプリがローカルに保存する：',ul:['ニックネーム・自己紹介（ローカルのみ、アップロードなし）','色の好みと履歴','言語設定']},
+{h:'システム権限',p:'写真から線画への変換機能のために：',ul:['カメラ：写真撮影用（保存・アップロードしません）','フォトライブラリ（読み取り）：既存写真の変換用','フォトライブラリ（書き込み）：作品保存用']},
+{h:'データ保存',p:'すべてのデータはデバイスローカルのみ。サーバーは運営しておらず、データ収集やアップロードは一切ありません。'},
+{h:'AI処理',p:'CoreML モデルによる画像処理はすべてデバイス上で実行。外部サーバーへの送信はありません。'},
+{h:'分析',p:'サードパーティ分析ツール（Firebase等）は一切使用していません。行動追跡やIDFA収集は行いません。'},
+{h:'フィードバック',p:'アプリ内フィードバックではシステムメールクライアント経由で送信されます（端末情報は問題切り分け用）。'},
+{h:'お子様',p:'全年齢向けです。13歳未満を含め、いかなる個人情報も意図的に収集しません。'},
+{h:'第三者',p:'サードパーティSDKは使用していません。アプリ内課金はApple StoreKitが処理します。'},
+{h:'データ削除',p:'全データがローカル保存のため、端末設定からアプリデータを消去、またはアンインストールで完全削除できます。'},
+{h:'更新',p:'本ポリシーは更新されることがあります。'},
+{h:'お問い合わせ',p:'プライバシーに関するお問い合わせ：',ul:['メール：xuanzzhang@163.com']}
+]},
+'ko':{n:'한국어',t:'개인정보처리방침',d:'2026년 7월 업데이트',s:[
+{h:'개요',p:'ZenColor 는 완전 오프라인 컬러링 앱입니다. 개인정보를 소중히 보호합니다.'},
+{h:'정보 수집',p:'개인식별정보를 수집하지 않습니다. 로컬에만 저장：',ul:['닉네임 및 자기소개','컬러링 선호도','언어 설정']},
+{h:'시스템 권한',p:'사진을 선화로 변환하기 위해：',ul:['카메라：촬영용（저장/업로드 안함）','사진 라이브러리 읽기','사진 라이브러리 쓰기']},
+{h:'데이터 저장',p:'모든 데이터는 기기 로컬에만 저장됩니다. 서버가 없으며 데이터 수집이나 업로드가 없습니다.'},
+{h:'AI 처리',p:'CoreML 모델은 기기 내에서만 실행됩니다. 외부 전송 없음.'},
+{h:'분석',p:'제3자 분석 도구를 사용하지 않습니다. 행동 추적이나 IDFA 수집 없음.'},
+{h:'피드백',p:'앱 내 피드백은 시스템 메일을 통해 발송됩니다.'},
+{h:'아동',p:'13세 미만을 포함한 모든 연령의 개인정보를 고의로 수집하지 않습니다.'},
+{h:'제3자',p:'제3자 SDK 미사용. 인앱 구매는 Apple StoreKit 처리.'},
+{h:'데이터 삭제',p:'기기 설정에서 앱 데이터 삭제 또는 앱 제거로 완전 삭제 가능.'},
+{h:'업데이트',p:'본 정책은 업데이트될 수 있습니다.'},
+{h:'문의',p:'개인정보 관련 문의：',ul:['이메일：xuanzzhang@163.com']}
+]},
+'fr':{n:'Français',t:'Politique de confidentialité',d:'Juillet 2026',s:[
+{h:'Aperçu',p:'ZenColor est une app de coloriage entièrement hors ligne. Nous protégeons votre vie privée.'},
+{h:'Collecte',p:'Aucune donnée personnelle identifiable collectée. Stockage local uniquement：',ul:['Pseudo et bio','Préférences de couleur','Langue']},
+{h:'Autorisations',p:'Pour la conversion photo en dessin：',ul:['Caméra (aucun stockage/upload)','Bibliothèque photo (lecture)','Bibliothèque photo (écriture)']},
+{h:'Stockage',p:'Toutes les données sont stockées localement. Aucun serveur. Aucune collecte.'},
+{h:'IA',p:'Modèles CoreML exécutés localement. Aucune transmission externe.'},
+{h:'Analytique',p:'Aucun outil tiers. Pas de suivi ni de collecte IDFA.'},
+{h:'Retour',p:'Envoi via le client mail du système.'},
+{h:'Enfants',p:'Pas de collecte, y compris pour les moins de 13 ans.'},
+{h:'Tiers',p:'Aucun SDK tiers. Achats via Apple StoreKit.'},
+{h:'Suppression',p:'Effacer les données dans les réglages ou désinstaller.'},
+{h:'Contact',p:['xuanzzhang@163.com']}
+]},
+'de':{n:'Deutsch',t:'Datenschutzerklärung',d:'Juli 2026',s:[
+{h:'Übersicht',p:'ZenColor ist eine vollständig offline Mal-App. Wir schützen Ihre Privatsphäre.'},
+{h:'Erhebung',p:'Keine personenbezogenen Daten. Nur lokal gespeichert：',ul:['Nickname & Bio','Farbpräferenzen','Sprache']},
+{h:'Berechtigungen',p:'Für Foto-zu-Skizze：',ul:['Kamera (keine Speicherung/Upload)','Fotomediathek (Lesen)','Fotomediathek (Schreiben)']},
+{h:'Speicherung',p:'Alle Daten lokal. Keine Server, keine Erhebung.'},
+{h:'KI',p:'CoreML läuft lokal. Keine externe Übertragung.'},
+{h:'Analyse',p:'Keine Drittanbieter-Tools. Kein Tracking.'},
+{h:'Feedback',p:'Über System-Mail-Client.'},
+{h:'Kinder',p:'Keine wissentliche Erhebung, auch nicht unter 13.'},
+{h:'Dritte',p:'Keine SDKs. Käufe über Apple StoreKit.'},
+{h:'Löschung',p:'Daten in Einstellungen löschen oder App deinstallieren.'},
+{h:'Kontakt',p:['xuanzzhang@163.com']}
+]},
+'es':{n:'Español',t:'Política de Privacidad',d:'Julio 2026',s:[
+{h:'Resumen',p:'ZenColor es una app de coloreado completamente offline. Protegemos su privacidad.'},
+{h:'Recopilación',p:'Sin datos personales identificables. Solo almacenamiento local：',ul:['Apodo y bio','Preferencias de color','Idioma']},
+{h:'Permisos',p:'Para convertir foto a boceto：',ul:['Cámara (sin almacenamiento/subida)','Fotos (lectura)','Fotos (escritura)']},
+{h:'Almacenamiento',p:'Todos los datos locales. Sin servidores. Sin recopilación.'},
+{h:'IA',p:'Modelos CoreML locales. Sin transmisión externa.'},
+{h:'Analítica',p:'Sin herramientas de terceros. Sin seguimiento.'},
+{h:'Contacto',p:['xuanzzhang@163.com']}
+]},
+'pt-BR':{n:'Português',t:'Política de Privacidade',d:'Julho 2026',s:[
+{h:'Visão Geral',p:'ZenColor é um app de colorir totalmente offline. Protegemos sua privacidade.'},
+{h:'Coleta',p:'Sem dados pessoais identificáveis. Apenas armazenamento local：',ul:['Apelido e bio','Preferências de cor','Idioma']},
+{h:'Permissões',p:'Para foto para esboço：',ul:['Câmera (sem armazenamento/upload)','Fotos (leitura)','Fotos (escrita)']},
+{h:'Armazenamento',p:'Todos dados locais. Sem servidores. Sem coleta.'},
+{h:'IA',p:'Modelos CoreML locais. Sem transmissão externa.'},
+{h:'Contato',p:['xuanzzhang@163.com']}
+]},
+'it':{n:'Italiano',t:'Informativa Privacy',d:'Luglio 2026',s:[
+{h:'Panoramica',p:'ZenColor è un\'app di colorazione completamente offline. Proteggiamo la tua privacy.'},
+{h:'Raccolta',p:'Nessun dato personale identificabile. Solo archiviazione locale：',ul:['Nickname e bio','Preferenze colore','Lingua']},
+{h:'Permessi',p:'Per foto a schizzo：',ul:['Fotocamera (nessuna archiviazione/upload)','Libreria foto (lettura)','Libreria foto (scrittura)']},
+{h:'Archiviazione',p:'Tutti dati locali. Nessun server. Nessuna raccolta.'},
+{h:'IA',p:'Modelli CoreML locali. Nessuna trasmissione esterna.'},
+{h:'Contatto',p:['xuanzzhang@163.com']}
+]},
+'ru':{n:'Русский',t:'Конфиденциальность',d:'Июль 2026',s:[
+{h:'Обзор',p:'ZenColor — полностью офлайн приложение. Мы защищаем вашу конфиденциальность.'},
+{h:'Сбор',p:'Персональные данные не собираются. Только локально：',ul:['Ник и описание','Цветовые предпочтения','Язык']},
+{h:'Разрешения',p:'Для фото в эскиз：',ul:['Камера (без сохранения/загрузки)','Фото (чтение)','Фото (запись)']},
+{h:'Хранение',p:'Все данные локально. Серверов нет. Сбора нет.'},
+{h:'ИИ',p:'Модели CoreML работают локально.'},
+{h:'Контакт',p:['xuanzzhang@163.com']}
+]},
+'ar':{n:'العربية',t:'سياسة الخصوصية',d:'يوليو 2026',s:[
+{h:'نظرة عامة',p:'ZenColor تطبيق تلوين يعمل بالكامل دون اتصال. نحن نحمي خصوصيتك.'},
+{h:'جمع المعلومات',p:'لا نجمع أي بيانات شخصية. التخزين محلي فقط：',ul:['الاسم المستعار','تفضيلات الألوان','اللغة']},
+{h:'الأذونات',p:'لتحويل الصور إلى رسومات：',ul:['الكاميرا (بدون تخزين/رفع)','مكتبة الصور (قراءة)','مكتبة الصور (كتابة)']},
+{h:'تخزين البيانات',p:'جميع البيانات محلية. لا خوادم. لا جمع.'},
+{h:'الذكاء الاصطناعي',p:'نماذج CoreML تعمل محلياً. لا نقل خارجي.'},
+{h:'اتصل بنا',p:['xuanzzhang@163.com']}
+]}
+};
+
+var langs=['zh-Hans','en','ja','ko','fr','de','es','pt-BR','it','ru','ar'];
+function render(lang){
+  if(!D[lang])lang='en';
+  var d=D[lang],h='<div class="lang-bar">';
+  langs.forEach(function(l){
+    h+='<a class="'+(l===lang?'on':'')+'" onclick="render(\''+l+'\')">'+D[l].n+'</a>';
+  });
+  h+='</div><h1>'+d.t+'</h1><div class="d">'+d.d+'</div>';
+  d.s.forEach(function(s){
+    h+='<section><h2>'+s.h+'</h2>';
+    if(Array.isArray(s.p))s.p.forEach(function(p){h+='<p>'+p+'</p>'});else h+='<p>'+s.p+'</p>';
+    if(s.ul&&s.ul.length)h+='<ul>'+s.ul.map(function(i){return'<li>'+i+'</li>'}).join('')+'</ul>';
+    h+='</section>';
+  });
+  h+='<div class="ft">&copy; 2026 ZenColor</div>';
+  document.getElementById('app').innerHTML=h;
+  document.documentElement.lang=lang;
+  try{localStorage.setItem('zlang',lang)}catch(e){}
+}
+
+var s; try{s=localStorage.getItem('zlang')}catch(e){}
+var nav=(navigator.language||'en'),found=langs.indexOf(nav);
+if(found===-1){var n2=nav.split('-')[0];langs.forEach(function(l){if(l.startsWith(n2))found=langs.indexOf(l)})}
+render(s||(found!==-1?langs[found]:'en'));
+</script>
+</body>
+</html>
