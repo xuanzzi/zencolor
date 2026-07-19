@@ -33,7 +33,7 @@ section li{margin-bottom:5px}
 <div class="wrap" id="app"></div>
 <script>
 var D={
-'zh-Hans':{n:'简体中文',t:'用户协议',d:'更新于 2026年7月',s:[
+'zh-Hant':{n:'中文',t:'用户协议',d:'更新于 2026年7月',s:[
 {h:'接受条款',p:'下载、安装或使用 ZenColor（以下简称"本应用"），即表示您已阅读并同意本协议全部条款。如果您不同意本协议的任何部分，请勿使用本应用。'},
 {h:'服务说明',p:'本应用是一款数字涂色应用，提供线稿涂色、颜色选择、作品保存与分享、"拍照转线稿"等功能。部分高级功能（包括全部线稿素材和无限制使用）需要订阅 ZenColor Premium 会员。'},
 {h:'订阅条款',p:'重要提示——请仔细阅读以下订阅相关条款：',ul:[
@@ -149,7 +149,7 @@ var D={
 ]}
 };
 
-var langs=['zh-Hans','en','ja','ko','fr','de','es','pt-BR','it','ru','ar'];
+var langs=['zh-Hant','en','ja','ko','fr','de','es','pt-BR','it','ru','ar'];
 function render(lang){
   if(!D[lang])lang='en';
   var d=D[lang],h='<div class="lang-bar">';
@@ -171,7 +171,7 @@ function render(lang){
 
 var s; try{s=localStorage.getItem('zlang')}catch(e){}
 var nav=(navigator.language||'en'),found=langs.indexOf(nav);
-if(found===-1){var n2=nav.split('-')[0];langs.forEach(function(l){if(l.startsWith(n2))found=langs.indexOf(l)})}
+if(found===-1){var n2=nav.split('-')[0];if(n2==='zh')n2='zh-Hant';langs.forEach(function(l){if(l.startsWith(n2)||(n2==='zh-Hant'&&l.startsWith('zh')))found=langs.indexOf(l)})}
 render(s||(found!==-1?langs[found]:'en'));
 </script>
 </body>
