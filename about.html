@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About · ZenColor</title>
+<style>
+:root{--bg:#F8F8FA;--text:#1C1C1E;--sub:#8E8E93;--accent:#636378;--card:#FFF;--border:#E5E5EA;--r:14px;--font:-apple-system,"SF Pro Display","Helvetica Neue","PingFang SC",sans-serif}
+@media(prefers-color-scheme:dark){:root{--bg:#0C0C0E;--text:#E5E5E7;--sub:#8E8E93;--card:#1C1C1E;--border:#2C2C2E;--accent:#A0A0B0}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-weight:300;line-height:1.8;-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding:48px 20px 80px}
+.lang-bar{display:flex;gap:6px;margin-bottom:32px;flex-wrap:wrap;justify-content:flex-end}
+.lang-bar a{color:var(--sub);font-size:11px;text-decoration:none;padding:4px 8px;border-radius:5px;border:1px solid var(--border);transition:.2s;cursor:pointer}
+.lang-bar a.on,.lang-bar a:hover{background:var(--text);color:var(--bg);border-color:var(--text)}
+h1{font-size:28px;font-weight:200;letter-spacing:-.3px;margin-bottom:4px}
+.d{font-size:13px;color:var(--sub);margin-bottom:32px}
+section{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:26px 22px;margin-bottom:14px}
+section h2{font-size:17px;font-weight:500;margin-bottom:12px;color:var(--accent)}
+section p,section li{font-size:14px;font-weight:300}
+section ul{padding-left:20px}
+section li{margin-bottom:5px}
+.ft{text-align:center;color:var(--sub);font-size:12px;margin-top:40px}
+.logo{text-align:center;margin-bottom:32px}
+.logo .emoji{font-size:48px}
+.app-name{font-size:22px;font-weight:300;letter-spacing:1px;margin-top:8px}
+.version{font-size:13px;color:var(--sub);margin-top:2px}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+var D={
+'en':{n:'English',t:'About ZenColor',v:'1.0.0',sec:[
+{h:'About',p:'ZenColor is a thoughtfully designed digital coloring app, delivering high-quality line art and a delightful, stress-free coloring experience right on your device.',ul:[]},
+{h:'Philosophy',p:'We believe coloring is more than entertainment — it\'s a way to relax the mind, unleash creativity, and find a moment of mindfulness. Every piece of line art is carefully curated and optimized for the best visual and tactile experience.',ul:[]},
+{h:'Features',p:'',ul:['300+ exquisite line art illustrations across 10 categories (Animals, Mandalas, Florals, Gardens, Masterpieces, and more)','Photo-to-Sketch: turn any photo from your camera or album into a paintable line art','Smart flood-fill coloring with smooth anti-aliasing edges','8 preset color swatches + custom color picker for ultimate creativity','Undo/Redo with 20-step history','Save artwork to gallery, share with watermarks, or export high-resolution PNG','Works gallery to manage all your creations','Multi-language support for 18 languages','Fully offline — no account, no data collection, your art stays on your device']},
+{h:'Subscription',p:'ZenColor offers a free tier with a curated selection of beautiful line art. Unlock the full library of 300+ illustrations and all premium features with ZenColor Premium. Subscriptions auto-renew and can be managed anytime in Apple ID settings.',ul:[]},
+{h:'Developer',p:'ZenColor is crafted with love by an indie developer. Every feature, every line of code, and every illustration is made with care. Your support and feedback drive us to keep improving. Thank you for being part of this journey.',ul:[]}
+]},
+'zh-Hant':{n:'中文',t:'关于 ZenColor',v:'1.0.0',d:'更新于 2026年7月',sec:[
+{h:'关于我们',p:'ZenColor 是一款精心设计的数字涂色应用，致力于在您的设备上提供高品质的线稿素材和愉悦放松的涂色体验。',ul:[]},
+{h:'我们的理念',p:'我们相信涂色不仅是娱乐，更是放松心灵、释放创造力的方式。每一张线稿都经过精心挑选和调整，确保最佳的视觉和触感体验。',ul:[]},
+{h:'功能特色',p:'',ul:['300+张精美线稿，涵盖10大分类（动物、曼陀罗、花卉、花园、名画等）','拍照转线稿：将相机或相册中的照片一键转为可涂色的线稿','智能 flood-fill 涂色 + 平滑抗锯齿边缘','8种预设色块 + 自定义取色器，创作随心','撤销/重做，支持20步历史','作品保存至图库、带水印分享或导出高清PNG','作品集管理您的每一幅创作','支持18种语言','完全离线运行——无需账户，不收集数据，作品只属于您']},
+{h:'订阅方案',p:'ZenColor 提供免费体验精选线稿。解锁全部 300+张素材及所有高级功能请订阅 ZenColor Premium。订阅自动续期，可随时在 Apple ID 设置中管理。',ul:[]},
+{h:'开发者',p:'ZenColor 由独立开发者倾注心血打造。每一张图、每一行代码都用心完成。您的支持和反馈是我们不断进步的动力。感谢您的陪伴。',ul:[]}
+]},
+'ja':{n:'日本語',t:'ZenColor について',v:'1.0.0',d:'2026年7月更新',sec:[
+{h:'概要',p:'ZenColor は、高品質な線画と心地よい塗り絵体験を提供するデジタル塗り絵アプリです。',ul:[]},
+{h:'理念',p:'塗り絵は娯楽を超えて、心をリラックスさせ創造性を解き放つ方法です。すべての線画が最高の体験を提供できるよう厳選されています。',ul:[]},
+{h:'機能',p:'',ul:['300枚以上の線画、10カテゴリ','写真を線画に変換','スマート塗りつぶし + アンチエイリアス','8色プリセット + カスタムカラーピッカー','元に戻す/やり直し（20ステップ）','作品保存・共有・PNG書き出し','作品ギャラリー','18言語対応','完全オフライン — アカウント不要、データ収集なし']},
+{h:'サブスクリプション',p:'ZenColor は無料で一部の線画をお試しいただけます。全300枚以上の素材とプレミアム機能は ZenColor Premium でご利用いただけます。',ul:[]},
+{h:'開発者',p:'ZenColor は個人開発者の情熱によって作られています。皆様のサポートが継続的な改善の原動力です。',ul:[]}
+]},
+'ko':{n:'한국어',t:'ZenColor 정보',v:'1.0.0',d:'2026년 7월 업데이트',sec:[
+{h:'소개',p:'ZenColor 는 고품질 선화와 즐거운 컬러링 경험을 제공하는 디지털 컬러링 앱입니다.',ul:[]},
+{h:'기능',p:'',ul:['300+ 선화, 10개 카테고리','사진을 선화로 변환','스마트 컬러 채우기','8가지 프리셋 색상 + 커스텀','실행 취소/다시 실행','작품 저장 및 공유','18개 언어 지원','완전 오프라인']}
+]},
+'fr':{n:'Français',t:'À propos',v:'1.0.0',d:'Mis à jour juillet 2026',sec:[
+{h:'À propos',p:'ZenColor est une app de coloriage numérique offrant des dessins de haute qualité et une expérience apaisante.',ul:[]},
+{h:'Fonctionnalités',p:'',ul:['300+ illustrations, 10 catégories','Photo en croquis','Remplissage intelligent','8 couleurs prédéfinies + personnalisation','Annuler/Rétablir','Sauvegarde et partage','18 langues','100% hors ligne']}
+]},
+'de':{n:'Deutsch',t:'Über ZenColor',v:'1.0.0',d:'Aktualisiert Juli 2026',sec:[{h:'Über',p:'ZenColor ist eine digitale Mal-App mit über 300 hochwertigen Vorlagen. Kein Account nötig, komplett offline.',ul:[]}]},
+'es':{n:'Español',t:'Acerca de',v:'1.0.0',d:'Actualizado julio 2026',sec:[{h:'Acerca de',p:'ZenColor es una app de coloreado digital con más de 300 ilustraciones. Sin cuenta, completamente offline.',ul:[]}]},
+'pt-BR':{n:'Português',t:'Sobre',v:'1.0.0',d:'Atualizado julho 2026',sec:[{h:'Sobre',p:'ZenColor é um app de colorir digital com mais de 300 ilustrações. Sem conta, totalmente offline.',ul:[]}]},
+'it':{n:'Italiano',t:'Info',v:'1.0.0',d:'Aggiornato luglio 2026',sec:[{h:'Info',p:'ZenColor è un\'app di colorazione digitale con oltre 300 illustrazioni. Nessun account, completamente offline.',ul:[]}]},
+'ru':{n:'Русский',t:'О приложении',v:'1.0.0',d:'Обновлено июль 2026',sec:[{h:'О приложении',p:'ZenColor — приложение для раскрашивания с 300+ иллюстрациями. Без аккаунта, полностью офлайн.',ul:[]}]},
+'ar':{n:'العربية',t:'حول',v:'1.0.0',d:'تم التحديث يوليو 2026',sec:[{h:'حول',p:'ZenColor هو تطبيق تلوين رقمي مع أكثر من 300 رسم. بدون حساب، يعمل دون اتصال.',ul:[]}]}
+};
+
+var L=['en','zh-Hant','ja','ko','fr','de','es','pt-BR','it','ru','ar'];
+L.forEach(function(l){if(!D[l])D[l]=D['en']});
+
+function render(lang){if(!D[lang])lang='en';
+  var d=D[lang],h='<div class="lang-bar">';
+  L.forEach(function(l){h+='<a class="'+(l===lang?'on':'')+'" onclick="render(\''+l+'\')">'+D[l].n+'</a>'});
+  h+='</div><h1>'+d.t+'</h1><div class="d">'+d.d+'</div>';
+  d.sec.forEach(function(s){h+='<section><h2>'+s.h+'</h2>';if(s.p)h+='<p>'+s.p+'</p>';
+    if(s.ul&&s.ul.length)h+='<ul>'+s.ul.map(function(i){return'<li>'+i+'</li>'}).join('')+'</ul>';h+='</section>';});
+  h+='<div class="ft">&copy; 2026 ZenColor</div>';
+  document.getElementById('app').innerHTML=h;
+}
+var nav=(navigator.language||'en');
+var found=L.indexOf(nav);
+if(found===-1){var n2=nav.split('-')[0];L.forEach(function(l){if(l.startsWith(n2))found=L.indexOf(l)})}
+render(found!==-1?L[found]:'en');
+</script>
+</body>
+</html>

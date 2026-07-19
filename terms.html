@@ -149,7 +149,7 @@ var D={
 ]}
 };
 
-var langs=['zh-Hant','en','ja','ko','fr','de','es','pt-BR','it','ru','ar'];
+var langs=['en','zh-Hant','ja','ko','fr','de','es','pt-BR','it','ru','ar'];
 function render(lang){
   if(!D[lang])lang='en';
   var d=D[lang],h='<div class="lang-bar">';
@@ -169,10 +169,10 @@ function render(lang){
   try{localStorage.setItem('zlang',lang)}catch(e){}
 }
 
-var s; try{s=localStorage.getItem('zlang')}catch(e){}
+
 var nav=(navigator.language||'en'),found=langs.indexOf(nav);
 if(found===-1){var n2=nav.split('-')[0];if(n2==='zh')n2='zh-Hant';langs.forEach(function(l){if(l.startsWith(n2)||(n2==='zh-Hant'&&l.startsWith('zh')))found=langs.indexOf(l)})}
-render(s||(found!==-1?langs[found]:'en'));
+render(found!==-1?langs[found]:'en');
 </script>
 </body>
 </html>
